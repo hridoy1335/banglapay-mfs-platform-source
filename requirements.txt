@@ -1,0 +1,4 @@
+psycopg[binary,pool]
+pymongo[srv]
+confluent-kafka[avro]
+python-dotenv
