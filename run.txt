@@ -1,0 +1,17 @@
+batch:
+    python scripts/run_sources.py \
+    --mode batch \
+    --transactions 100 \
+    --sessions 50 \
+    --activities 500 \
+    --fraud-cases 10 \
+    --support-cases 20 \
+    --merchant-events 100 \
+    --publish-batch-size 10000
+
+streaming:
+    python scripts/run_sources.py \
+    --mode streaming \
+    --duration 30 \
+    --rate 5 \
+    --interval-seconds 5

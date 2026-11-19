@@ -1,0 +1,13 @@
+# configs/batch.yaml
+
+batch:
+  transactions: 100
+  app_sessions: 50
+  customer_activities: 500
+  fraud_cases: 10
+  support_cases: 20
+  merchant_device_events: 100
+
+kafka:
+  publish_enabled: true
+  batch_size: 25

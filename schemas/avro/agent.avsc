@@ -1,0 +1,97 @@
+{
+  "type": "record",
+  "name": "AgentEvent",
+  "namespace": "com.banglapay.events.v1",
+  "fields": [
+    {
+      "name": "event_id",
+      "type": "string"
+    },
+    {
+      "name": "event_type",
+      "type": "string"
+    },
+    {
+      "name": "event_version",
+      "type": "int",
+      "default": 1
+    },
+    {
+      "name": "occurred_at",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "source_system",
+      "type": "string"
+    },
+    {
+      "name": "aggregate_type",
+      "type": "string"
+    },
+    {
+      "name": "aggregate_id",
+      "type": "string"
+    },
+    {
+      "name": "correlation_id",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "run_id",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "payload",
+      "type": {
+        "type": "record",
+        "name": "AgentPayload",
+        "fields": [
+          {
+            "name": "agent_id",
+            "type": "string"
+          },
+          {
+            "name": "outlet_id",
+            "type": "string"
+          },
+          {
+            "name": "event_category",
+            "type": "string"
+          },
+          {
+            "name": "electronic_float_paisa",
+            "type": "long"
+          },
+          {
+            "name": "reserved_float_paisa",
+            "type": "long"
+          },
+          {
+            "name": "physical_cash_paisa",
+            "type": "long"
+          },
+          {
+            "name": "currency",
+            "type": "string",
+            "default": "BDT"
+          },
+          {
+            "name": "outlet_status",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}

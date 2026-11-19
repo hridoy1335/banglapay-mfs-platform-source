@@ -1,0 +1,104 @@
+{
+  "type": "record",
+  "name": "RiskEvent",
+  "namespace": "com.banglapay.events.v1",
+  "fields": [
+    {
+      "name": "event_id",
+      "type": "string"
+    },
+    {
+      "name": "event_type",
+      "type": "string"
+    },
+    {
+      "name": "event_version",
+      "type": "int",
+      "default": 1
+    },
+    {
+      "name": "occurred_at",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "source_system",
+      "type": "string"
+    },
+    {
+      "name": "aggregate_type",
+      "type": "string"
+    },
+    {
+      "name": "aggregate_id",
+      "type": "string"
+    },
+    {
+      "name": "correlation_id",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "run_id",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "payload",
+      "type": {
+        "type": "record",
+        "name": "RiskPayload",
+        "fields": [
+          {
+            "name": "case_id",
+            "type": "string"
+          },
+          {
+            "name": "customer_id",
+            "type": "string"
+          },
+          {
+            "name": "transaction_id",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "case_type",
+            "type": "string"
+          },
+          {
+            "name": "risk_score",
+            "type": "int"
+          },
+          {
+            "name": "detection_source",
+            "type": "string"
+          },
+          {
+            "name": "case_status",
+            "type": "string"
+          },
+          {
+            "name": "signals",
+            "type": {
+              "type": "array",
+              "items": "string"
+            },
+            "default": []
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+
+currency: BDT
+
+transaction_count:
+  default: 20
+  maximum: 5000
+
+transaction_distribution:
+  P2P: 40
+  CASH_IN: 15
+  CASH_OUT: 15
+  MERCHANT_PAYMENT: 15
+  BILL_PAYMENT: 8
+  MOBILE_RECHARGE: 5
+  SALARY_DISBURSEMENT: 2
+
+status_distribution:
+  SUCCESS: 96.5
+  FAILED: 2.5
+  PENDING: 1.0
+
+amount_ranges_taka:
+  P2P: [50, 5000]
+  CASH_IN: [100, 5000]
+  CASH_OUT: [100, 5000]
+  MERCHANT_PAYMENT: [20, 3000]
+  BILL_PAYMENT: [100, 5000]
+  MOBILE_RECHARGE: [20, 500]
+  SALARY_DISBURSEMENT: [1000, 25000]
+
+fees:
+  enabled: false
+
+publishing:
+  mode: OUTBOX
+  auto_publish: false

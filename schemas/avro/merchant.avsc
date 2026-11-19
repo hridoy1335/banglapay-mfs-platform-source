@@ -1,0 +1,117 @@
+{
+  "type": "record",
+  "name": "MerchantEvent",
+  "namespace": "com.banglapay.events.v1",
+  "fields": [
+    {
+      "name": "event_id",
+      "type": "string"
+    },
+    {
+      "name": "event_type",
+      "type": "string"
+    },
+    {
+      "name": "event_version",
+      "type": "int",
+      "default": 1
+    },
+    {
+      "name": "occurred_at",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    },
+    {
+      "name": "source_system",
+      "type": "string"
+    },
+    {
+      "name": "aggregate_type",
+      "type": "string"
+    },
+    {
+      "name": "aggregate_id",
+      "type": "string"
+    },
+    {
+      "name": "correlation_id",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "run_id",
+      "type": [
+        "null",
+        "string"
+      ],
+      "default": null
+    },
+    {
+      "name": "payload",
+      "type": {
+        "type": "record",
+        "name": "MerchantPayload",
+        "fields": [
+          {
+            "name": "merchant_id",
+            "type": "string"
+          },
+          {
+            "name": "terminal_id",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "transaction_id",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "event_category",
+            "type": "string"
+          },
+          {
+            "name": "payment_status",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "amount_paisa",
+            "type": [
+              "null",
+              "long"
+            ],
+            "default": null
+          },
+          {
+            "name": "fee_paisa",
+            "type": [
+              "null",
+              "long"
+            ],
+            "default": null
+          },
+          {
+            "name": "currency",
+            "type": "string",
+            "default": "BDT"
+          }
+        ]
+      }
+    }
+  ]
+}

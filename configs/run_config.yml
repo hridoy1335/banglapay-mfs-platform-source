@@ -1,0 +1,21 @@
+mode: batch
+
+batch:
+  transactions: 100
+  app_sessions: 50
+  customer_activities: 500
+  fraud_cases: 10
+  support_cases: 20
+  merchant_device_events: 100
+
+streaming:
+  duration_minutes: 30
+  transactions_per_second: 5
+
+destinations:
+  postgres: true
+  mongodb: true
+  kafka: true
+
+kafka:
+  publish_batch_size: 25
