@@ -28,9 +28,13 @@ def env(name):
         raise ValueError(f"Missing environment variable: {name}")
     return value
 
-
 def check_neon():
-    with psycopg.connect(env("NEON_DATABASE_URL"), connect_timeout=15) as conn:
+    expected_tables = 22
+
+    with psycopg.connect(
+        env("NEON_DATABASE_URL"),
+        connect_timeout=15
+    ) as conn:
         with conn.cursor() as cur:
             cur.execute("SELECT current_database()")
             database = cur.fetchone()[0]
@@ -47,8 +51,15 @@ def check_neon():
             """)
             tables = cur.fetchone()[0]
 
-    print(f"PASS Neon: {database}, {tables} tables")
-    return tables == 21
+    passed = tables == expected_tables
+    status = "PASS" if passed else "FAIL"
+
+    print(
+        f"{status} Neon: {database}, "
+        f"{tables} tables (expected {expected_tables})"
+    )
+
+    return passed
 
 
 def check_mongodb():
