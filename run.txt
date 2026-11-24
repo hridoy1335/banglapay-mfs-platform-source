@@ -15,3 +15,7 @@ streaming:
     --duration 30 \
     --rate 5 \
     --interval-seconds 5
+
+kafka:
+    .venv/bin/python -m src.publishers.outbox_publisher \
+    --batch-size 1000
